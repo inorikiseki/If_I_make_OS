@@ -1,0 +1,18 @@
+'#' means optional
+
+varible & const::
+autotype:
+x="string"
+
+everytype is object and has their own functions
+
+functions:
+keyword
+
+fn main:
+  "hello world".print!
+  
+that is the basic main
+fixes & option
+prefix,afterfix
+

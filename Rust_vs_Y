@@ -1,0 +1,65 @@
+Rust----------------------------------------
+use std::io;
+use rand::Rng;
+use std::cmp::Ordering;
+
+fn main() {
+    println!("Guess the number!");
+    let secret_number=rand::thread_rng().gen_range(1..=100);
+    println!("Please input your guess");
+
+    loop{
+        let mut guess =String::new();
+        io::stdin()
+            .read_line(&mut guess)
+            .expect("Failed to read line");
+        println!("You guessed:{guess} "); 
+
+        let guess:u32 = match guess.trim().parse(){
+            Ok(num)  =>num,
+            Err(_) =>continue,
+        };
+        match guess.cmp(&secret_number){
+            Ordering::Less => println!("Tool small"),
+            Ordering::Greater => println!("Too big"),
+            Ordering::Equal => {
+                println!("You win");
+                break;
+            }   
+        }
+    }
+}
+------------------------------------------
+
+Y------------------------------------------0.1.0
+use std::io
+use rand::Rng
+use std::cmp::Ordering
+
+fn main:
+  print "Guess the number" endl
+  secret_number=rand::range 1..100
+  print "Please input your guess 
+  //auto end " for a line , ' for a word ,.( also
+  
+  loop:
+    re guess=String.new
+    io::stdin.read_line guess-mut
+      //fix: to make guess mutable
+      .expect "Failed to read line
+    print "You guessed: 'guess
+    
+    re guess:u32=guess.trim.u32.match 
+     //last when :: show again or go out of scope
+     Ok(num > num
+     Err(_ > continue
+     
+    guess.cmp secret_number 
+       .match Ordering::
+       Less> "Tool small
+       Greater> "Too big
+       Equal> "You win" break
+       _>all.print
+
+fn function:get -args -return
+//inherit option

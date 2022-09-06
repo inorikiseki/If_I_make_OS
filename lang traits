@@ -1,0 +1,25 @@
+# design and implement a compact algorithm , the ide will compact the code when save and contract it when load
+it 's different with normal txt, the source always has the repeat unit
+
+store the keyword as global and keyword as local
+
+struct Player:
+  health:i32
+  power:i32
+  name:String
+  speed:32
+encode as complie but different as compile a little, this makes it completely reconstructable
+
+Above is not syntax level
+## and i will has two main style of code 
+and mini and strict 
+This is syntax level
+And make it a norm.
+the ide of text will auto know if this is a impact version of code.
+and this algorithm must be fast.
+And it is impl by complier.
+Part of maybe.
+
+feature:
+mini withou
+

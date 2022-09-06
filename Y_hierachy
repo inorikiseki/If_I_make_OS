@@ -1,0 +1,44 @@
+Rust:
+mod back_of_house{
+  pub struct Breakfast{
+    pub toast:String,
+    seasonal_fruit,
+    }
+  }
+  impl Breakfast{
+  pub fn summer(toast:&str)->Breakfast{
+    Breakfast{
+      toast:String::from(toast),
+      seasonal_fruit: String::from("peach"),
+    }
+  }
+}
+
+
+Y:
+back_of_house:
+  Breakfast:
+  	toast: String
+	  .seasonal_fruit: String  //private     
+	  fn new(toast:&str): // every type should offer instatiate method
+      //as String offer String::from
+      //Breakfast offer new-spring,new-summer...
+      //Because we already know the type of toast so 
+      //we call the instantiate method of it and make the toast init-ed
+      toast.from(toast)
+      -spring:
+        seasonal_fruit.from("cherry")
+      -summer:
+        seasonal_fruit.from("peaches")
+      -autoum:
+        seasonal_fruit.from("orange")
+      -winter:
+        seasonal_fruit.from("apple")
+        -win_special:
+        print "you had a specail breakfast of winter version!"
+fn main:
+  meal:Breakfast.new-winter "wheat"
+  meal.to "Rye"  //change the filed to Rye
+  print "I'd like 'meal.toast  "
+  
+

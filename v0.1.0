@@ -1,0 +1,48 @@
+directory::
+    Directory::
+        file.Type
+    file.Type
+    Class::
+        member:Type
+        function -fn args:
+             body
+    .private_directory::
+    .private_function -fn
+
+
+Drinking::
+    Size::
+        Big,Medium,Small
+    Milk_tea::
+        size.Size
+        .temperature.String
+        new -fn size:Size:
+            size.to size
+            -Summer|Spring:
+                temprature.new -from "Cold"
+                -special:
+                     print! "You got a special cup!"
+            -Autoum|Winter:
+                temprature.new -from "Hot"
+        told -fn:
+            print! "I order a 'size cup of 'temperatrue milk tea"      
+    Cola|Coffee::
+       size.Size
+       new -resemble Milk_tea.new
+       told -fn:
+           print! "I want a cup 'size of 'super"
+main -fn:
+    i_want:Drinking/Milk_tea.new-Summer Drinking/Size.Big
+    you_want:Drinking/Coffee.new Drinking/Size.Small
+    -in Drinking 
+    he want:Cola.new Size.Medium
+    i_want.told
+    you_want.told
+    he_want.told
+
+***************
+Print Result:
+I order a BIG cup of a Cold milk tea
+I want a cup of SMALL coffee
+I want a cup of MEDIUM cola
+***************

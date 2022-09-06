@@ -1,0 +1,67 @@
+Game::
+    World::
+        Player::
+             name.String
+             health.i32 -max:100 -min:0
+             power.f32
+             mana.u32
+        Camera::
+             width,height:f32,f32
+    GUI::
+        Label::
+            text.String
+            font.Style
+        Button -extend Label::
+            image.Image
+        Style::
+            font_style:
+                bold,italy,subline
+    Uitls::
+        # None
+-impl Game/World/Player::
+    new -fn name.&String:
+        self/name.from name
+        -:
+            health.as 100i32
+            mana.as 100u32
+        -sp:
+            power.as 15.0
+            print! "You got a sp Player"
+    hurt -fn damaga.i32:
+        health.dec damage
+        print! "Player 'name take 'damage point of damages"
+    heal -fn healing.i32:
+        if health + healing < health-max:
+            health.inc healing
+        else:
+            health.to it-max
+            print! "full health"
+        print! "Player recover by 'healing"
+-impl Game/GUI/Label::
+    show.c -fn:
+        #include <stdio.h>
+        int main(){
+            print("I am a Label!\n");
+        }
+    close.rs:
+        fn main(){
+            self.colse();
+            println!( "Label has closed.");
+        }
+    change.java -fn text.String:
+        class Label{
+            public static void main(String args[])
+            System.out.println("Change Label to "+text);
+        }
+main -fn:
+    -in Game/World/Player
+    David:new-sp "David"
+    David.hurt 20
+    David.heal 15
+    David.hurt 20 .heal 10
+    -in Game/GUI
+    little_label:Label.new
+    little_label.show
+       .change "big label"
+       .close
+    -out

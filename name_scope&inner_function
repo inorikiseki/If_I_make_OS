@@ -15,7 +15,7 @@ subject.type:instance_init
 
 Context is important. The complier will try to remember context by some rules and IDE will 
 tell the true subjects by hint.
-Should try the best to make a good context mode to make we type less.And do not will try to  
+Should try the best to make a good context mode to make we type less.And avoid to  
 type one info for many times.
 
 associate function:

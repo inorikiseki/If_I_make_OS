@@ -28,12 +28,12 @@ inner function:
 String::
   replace.String origin.String:
     with goal.String: #use the outterfunction args
-      sub.find origin >>start_position
+      sub.find origin >>start_position  # the IDE should search the find function and konw what the return value is and how it's named so you can just type TAB.
         delete origin >>del
-        .add goal at start_position 
+        .add goal at start_position>>return
     -all:
-      -with|to|by goal.Char:
-         sub.foreach.to goal
+      -with|to|by.String goal.Char:
+         sub.foreach.to goal>>return sub
     
     
  So you can use like this:
@@ -42,7 +42,7 @@ String::
     .replace "world" with "Yuan"
 >>Hello_Yuan
     .replace-all-with "*"
->>SecretString
+>>SecretString   
     .print
     
 Print____________________

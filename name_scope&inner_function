@@ -1,0 +1,67 @@
+define fmt:
+subject.type args:
+  procedure
+  return_value
+  
+: -> expression
+:: ->module
+
+eval fmt:
+subject.type:instance_init
+ verb|function|method|action args (return value)
+  .verb >> registered_value_name
+  verb objects >>another_registered_value
+  verb registered_value_name,another_value_name >>self
+
+Context is important. The complier will try to remember context by some rules and IDE will 
+tell the true subjects by hint.
+Should try the best to make a good context mode to make we type less.And do not will try to  
+type one info for many times.
+
+associate function:
+
+sub:String.new "subject"
+  .replace "sub" with "ob" >> object   # object is only a lable for the replace function's return value
+  .capital.uppercase rename-as ob      # sub is rename to ob and sub is not usable now. The String after ob is a must.
+  
+inner function:
+String::
+  replace.String origin.String:
+    with goal.String: #use the outterfunction args
+      sub.find origin >>start_position
+        delete origin >>del
+        .add goal at start_position 
+    -all:
+      -with|to|by goal.Char:
+         sub.foreach.to goal
+    
+    
+ So you can use like this:
+ #the pure "Hello,world!" is a Slice, not a String. So we should cast it as String.
+ "Hello,world!" as String
+    .replace "world" with "Yuan"
+>>Hello_Yuan
+    .replace-all-with "*"
+>>SecretString
+    .print
+    
+Print____________________
+**********
+________________________
+
+ 
+as inner function 
+if you want use the outter function 's args you should not use '-'
+but if you don't want use the outter function 's args you should use '-' before the name
+subject-oriented programing ne.
+      
+主：符串。
+  新 “主语”。
+  替换 “主” 为 “宾” 》》宾语。
+  首字符。繁体化  
+  。名为 宾
+ob.print
+****out***     
+Object
+**********
+
